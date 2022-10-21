@@ -2,16 +2,19 @@
 
 int main(){
     int n; std::cin >> n;
-    int prev, cur, next;
-    std::cin >> prev >> cur;
-    for(int i = 2; i < n; ++i){
-        std::cin >> next;
-        if(cur > next and cur > prev){
-            std::cout << i-1;
+    int* arr = new int[n];
+
+    //заполнение массива
+    for(int i = 0; i < n; ++i){
+        std::cin >> arr[i];
+    }
+    
+    //нахождние локального максимума
+    for(int i = 1; i < n-1; ++i){
+        if(arr[i] > arr[i+1] and arr[i] > arr[i-1]){
+            std::cout << i;
             return 0;
         }
-        prev = cur;
-        cur = next;
     } 
     std::cout << -1;
     return 0;

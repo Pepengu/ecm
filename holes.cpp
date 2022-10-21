@@ -4,6 +4,7 @@ int main(){
     int n; std::cin >> n;
     int s = 0;
     int* arr = new int[n];
+    
     //заполнение массива
     for(int i = 0; i < n; ++i){
         std::cin >> arr[i];
